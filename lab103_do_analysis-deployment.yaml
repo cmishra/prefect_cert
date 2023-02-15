@@ -1,0 +1,47 @@
+###
+### A complete description of a Prefect Deployment for flow 'lab103-do-analysis'
+###
+name: first_deployment
+description: null
+version: c63ddeedaf18fe17516613e18d40115c
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: default-agent-pool
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: true
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: lab103-do-analysis
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: c5dddd5e-ed07-4c76-9d38-55bd8c6d0944
+  _block_document_name: anonymous-7d15eee8-7c2c-4c4c-a655-629e91515d1e
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage: null
+path: /Users/chetanmishra/projects/prefect_cert
+entrypoint: lab103.py:lab103_do_analysis
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    ticker:
+      title: ticker
+      default: IBM
+      position: 0
+  required: null
+  definitions: null
+timestamp: '2023-02-15T19:00:17.417031+00:00'
