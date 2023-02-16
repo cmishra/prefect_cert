@@ -30,7 +30,7 @@ def get_stockdata(ticker):
 
 
 @flow
-def lab103_do_analysis(ticker='IBM'):
+def lab103_do_analysis(ticker="IBM"):
     set_alphavantage_apikey()
     data = get_stockdata(ticker)
     last_updated = data["Meta Data"]["3. Last Refreshed"]
