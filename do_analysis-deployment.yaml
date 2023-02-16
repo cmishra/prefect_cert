@@ -1,0 +1,53 @@
+###
+### A complete description of a Prefect Deployment for flow 'do-analysis'
+###
+name: lab102_do_analysis
+description: null
+version: 42df9adb5be212b3cfa2b6d9f4e82a62
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: default-agent-pool
+tags:
+- demo2
+parameters: {}
+schedule: null
+is_schedule_active: true
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: do-analysis
+manifest_path: null
+infrastructure:
+  type: docker-container
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  image: prefect
+  image_pull_policy: ALWAYS
+  image_registry: null
+  networks: []
+  network_mode: null
+  auto_remove: false
+  volumes: []
+  stream_output: true
+  memswap_limit: null
+  mem_limit: null
+  privileged: false
+  _block_document_id: 629d7092-fd51-4032-bc97-bc8c9213c36e
+  _block_document_name: docker
+  _is_anonymous: false
+  block_type_slug: docker-container
+  _block_type_slug: docker-container
+storage: null
+path: /opt/prefect/flows
+entrypoint: lab102:do_analysis
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties: {}
+  required: null
+  definitions: null
+timestamp: '2023-02-16T16:03:54.546654+00:00'

@@ -46,7 +46,7 @@ def analyze_data(pd):
 def do_analysis():
     res = fetch_data()
     print(res)
-    analyze_data(res)
+    # analyze_data(res)
 
 
 if __name__ == "__main__":
