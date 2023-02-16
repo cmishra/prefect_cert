@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prefect-orion
+  namespace: default
+  labels:
+    app: prefect-orion
+spec:
+  selector:
+    matchLabels:
+      app: prefect-orion
+  replicas: 1  # We're using SQLite, so we should only run 1 pod
+  template:
+    metadata:
+      labels:
+        app: prefect-orion
+    spec:
+      serviceAccountName: gke-service-account
+      containers:
+      - name: api
+        image: us.gcr.io/chetanmishra/prefect
+        command: ["prefect", "orion", "start", "--host", "0.0.0.0", "--log-level", "WARNING"]
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 4200
+        env:
+          - name: PREFECT_ORION_DATABASE_CONNECTION_URL
+            value: postgresql+asyncpg://postgres:aonsetutaoeuaeo778237827683haoe@db.zevbbosvsqlduyobrnzq.supabase.co:5432/postgres
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prefect-orion
+  namespace: default
+  labels:
+    app: prefect-orion
+spec:
+  ports:
+    - port: 4200
+      protocol: TCP
+  selector:
+    app: prefect-orion
+
+

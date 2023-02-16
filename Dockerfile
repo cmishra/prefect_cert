@@ -1,5 +1,5 @@
-FROM prefecthq/prefect:2-latest
+FROM --platform=amd64 prefecthq/prefect:2-latest
 
-RUN pip install yfinance statsmodels
+RUN pip install yfinance 
 
 COPY ./* /opt/prefect/flows/
